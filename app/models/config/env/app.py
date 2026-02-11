@@ -1,5 +1,7 @@
 from pydantic import BaseModel
-from app.models.config.env import PostgresConfig, SQLAlchemyConfig, TelegramConfig
+from .postgres import PostgresConfig
+from .sql_alchemy import SQLAlchemyConfig
+from .telegram import TelegramConfig
 
 
 class AppConfig(BaseModel):
