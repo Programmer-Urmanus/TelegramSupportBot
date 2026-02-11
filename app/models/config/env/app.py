@@ -1,12 +1,16 @@
-"""
-Application configuration aggregator.
-"""
-
 from pydantic import BaseModel
+from app.models.config.env import PostgresConfig, SQLAlchemyConfig, TelegramConfig
 
 
 class AppConfig(BaseModel):
-    """Aggregates all application env configs."""
+    """
+    Application configuration aggregator.
+    Collects and exposes all environment domains
+    required by the application.
+    """
 
-    # TODO : Will include TG, DB, Common configs later
-    pass
+    postgres: PostgresConfig
+    sql_alchemy: SQLAlchemyConfig
+    telegram: TelegramConfig
+
+    # TODO: will include common config later
